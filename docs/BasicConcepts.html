@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>BasicConcepts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+
+<p>
+<a href="index.html">HOME</a>
+</p>
+
+<div id="Contents" class="toc"><h1 id="Contents">Contents</h1></div>
+<ul>
+<li>
+<a href="BasicConcepts.html#Basic Concepts">Basic Concepts</a>
+
+<ul>
+<li>
+<a href="BasicConcepts.html#Basic Concepts-Scenes">Scenes</a>
+
+<li>
+<a href="BasicConcepts.html#Basic Concepts-Director">Director</a>
+
+</ul>
+</ul>
+
+
+<div id="Basic Concepts"><h1 id="Basic Concepts">Basic Concepts</h1></div>
+
+<div id="Basic Concepts-Scenes"><h2 id="Scenes">Scenes</h2></div>
+
+<p>
+<span id="Basic Concepts-Scenes-Scenes"></span><strong id="Scenes">Scenes</strong> - independent piece of the app
+</p>
+
+<ul>
+<li>
+the app can have multiple scenes
+
+<li>
+only one scene is active at a time
+
+</ul>
+
+<p>
+Example:
+</p>
+
+<p>
+Intro --&gt; Menu --&gt; Level 1 --&gt; Cutscene --&gt; etc...
+</p>
+
+<p>
+Note: each scene can be defined as a separate app
+</p>
+
+<p>
+A Scene is the root of a tree of CocosNodes:
+</p>
+
+<pre>
+           Scene
+          /     \
+         /       \
+        /         \
+       /           \
+    Layer 1      Layer 2
+     /  \          /  \
+    /    \        /    \
+sprite sprite  sprite sprite
+</pre>
+
+
+<div id="Basic Concepts-Director"><h2 id="Director">Director</h2></div>
+
+<p>
+<span id="Basic Concepts-Director-Director"></span><strong id="Director">Director</strong> - handles going back and forth between scenes
+</p>
+
+<ul>
+<li>
+singleton object in a cocos2d app
+
+<li>
+push, replacement, end of current scene is made by director
+
+<li>
+resposible for initializing the main window
+
+</ul>
+
+<pre python>
+import cocos
+from cocos.director import director
+</pre>
+
+
+<div id="Basic Concepts-Layers"><h2 id="Layers">Layers</h2></div>
+
+<p>
+<span id="Basic Concepts-Layers-Layer"></span><strong id="Layer">Layer</strong> - helps organize the scene in the back to front axis
+</p>
+
+<pre>
++-------------+
+|.............| Background Layer
+|.............|
+|...+-------------+
+|...|.............| Animation Layer
++---|.............|
+    |...+-------------+
+    |...|.............| Menu Layer
+    +---|.............|
+        |.............|
+        |.............|
+        +-------------+
+</pre>
+        
+<ul>
+<li>
+Most programming time will be spent coding Layer sub-classes
+
+<li>
+The Layer is where event handlers are defined
+
+</ul>
+
+</body>
+</html>
