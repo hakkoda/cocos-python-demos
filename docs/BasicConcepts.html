@@ -11,28 +11,37 @@
 <a href="index.html">HOME</a>
 </p>
 
-<div id="Contents" class="toc"><h1 id="Contents">Contents</h1></div>
+<div id="BASIC CONCEPTS"><h1 id="BASIC CONCEPTS">BASIC CONCEPTS</h1></div>
+
+<div id="CONTENTS"><h1 id="CONTENTS">CONTENTS</h1></div>
 <ul>
 <li>
-<a href="BasicConcepts.html#Basic Concepts">Basic Concepts</a>
+<a href="BasicConcepts.html#BASIC CONCEPTS">BASIC CONCEPTS</a>
+
+<li>
+<a href="BasicConcepts.html#CONTENTS">CONTENTS</a>
 
 <ul>
 <li>
-<a href="BasicConcepts.html#Basic Concepts-Scenes">Scenes</a>
+<a href="BasicConcepts.html#CONTENTS-SCENES">SCENES</a>
 
 <li>
-<a href="BasicConcepts.html#Basic Concepts-Director">Director</a>
+<a href="BasicConcepts.html#CONTENTS-DIRECTOR">DIRECTOR</a>
+
+<li>
+<a href="BasicConcepts.html#CONTENTS-LAYERS">LAYERS</a>
+
+<li>
+<a href="BasicConcepts.html#CONTENTS-CODE EXAMPLES">CODE EXAMPLES</a>
 
 </ul>
 </ul>
 
 
-<div id="Basic Concepts"><h1 id="Basic Concepts">Basic Concepts</h1></div>
-
-<div id="Basic Concepts-Scenes"><h2 id="Scenes">Scenes</h2></div>
+<div id="CONTENTS-SCENES"><h2 id="SCENES">SCENES</h2></div>
 
 <p>
-<span id="Basic Concepts-Scenes-Scenes"></span><strong id="Scenes">Scenes</strong> - independent piece of the app
+<span id="CONTENTS-SCENES-Scenes"></span><strong id="Scenes">Scenes</strong> - independent piece of the app
 </p>
 
 <ul>
@@ -73,10 +82,10 @@ sprite sprite  sprite sprite
 </pre>
 
 
-<div id="Basic Concepts-Director"><h2 id="Director">Director</h2></div>
+<div id="CONTENTS-DIRECTOR"><h2 id="DIRECTOR">DIRECTOR</h2></div>
 
 <p>
-<span id="Basic Concepts-Director-Director"></span><strong id="Director">Director</strong> - handles going back and forth between scenes
+<span id="CONTENTS-DIRECTOR-Director"></span><strong id="Director">Director</strong> - handles going back and forth between scenes
 </p>
 
 <ul>
@@ -97,10 +106,10 @@ from cocos.director import director
 </pre>
 
 
-<div id="Basic Concepts-Layers"><h2 id="Layers">Layers</h2></div>
+<div id="CONTENTS-LAYERS"><h2 id="LAYERS">LAYERS</h2></div>
 
 <p>
-<span id="Basic Concepts-Layers-Layer"></span><strong id="Layer">Layer</strong> - helps organize the scene in the back to front axis
+<span id="CONTENTS-LAYERS-Layer"></span><strong id="Layer">Layer</strong> - helps organize the scene in the back to front axis
 </p>
 
 <pre>
@@ -126,6 +135,47 @@ Most programming time will be spent coding Layer sub-classes
 The Layer is where event handlers are defined
 
 </ul>
+
+<div id="CONTENTS-CODE EXAMPLES"><h2 id="CODE EXAMPLES">CODE EXAMPLES</h2></div>
+
+<pre python>
+# Demonstrate how to setup a director, scene, and layer
+
+# import the cocos package
+import cocos
+
+# import the director from cocos package
+from cocos.director import director
+
+class DemoLayer01(cocos.layer.Layer):
+    def __init__(self):
+        super(DemoLayer01, self).__init__()
+        self.demo_layer_setup()
+
+    # just some quick code to show the layer is working
+    def demo_layer_setup(self):
+        label = cocos.text.Label(
+            "This is the demo layer",
+            font_name = "Times New Roman",
+            font_size = 32,
+            anchor_x = "center", anchor_y = "center")
+        label.position = 320, 240
+        self.add(label)
+
+
+if __name__ == "__main__":
+    # initialize the window (running this first is required)
+    director.init()
+
+    # initialize a demo layer
+    demo_layer_01 = DemoLayer01()
+
+    # create a scene that contains a demo layer
+    demo_scene_01 = cocos.scene.Scene(demo_layer_01)
+
+    # have the director run the demo scene
+    director.run(demo_scene_01)
+</pre>
 
 </body>
 </html>

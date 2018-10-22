@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DemoLayer01	Demos/BasicConcepts/Demo01.py	/^class DemoLayer01(cocos.layer.Layer):$/;"	c
+__init__	Demos/BasicConcepts/Demo01.py	/^    def __init__(self):$/;"	m	class:DemoLayer01
+config	setup.py	/^config = {$/;"	v
+demo_layer_01	Demos/BasicConcepts/Demo01.py	/^    demo_layer_01 = DemoLayer01()$/;"	v	class:DemoLayer01
+demo_layer_setup	Demos/BasicConcepts/Demo01.py	/^    def demo_layer_setup(self):$/;"	m	class:DemoLayer01
+demo_scene_01	Demos/BasicConcepts/Demo01.py	/^    demo_scene_01 = cocos.scene.Scene(demo_layer_01)$/;"	v	class:DemoLayer01
+setup	tests/Demos_tests.py	/^def setup():$/;"	f
+teardown	tests/Demos_tests.py	/^def teardown():$/;"	f
+test_basic	tests/Demos_tests.py	/^def test_basic():$/;"	f
