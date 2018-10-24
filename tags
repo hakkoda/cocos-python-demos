@@ -4,12 +4,41 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DemoEventDispatcher01	Demos/Events/Demo01.py	/^class DemoEventDispatcher01(pyglet.event.EventDispatcher):$/;"	c
 DemoLayer01	Demos/BasicConcepts/Demo01.py	/^class DemoLayer01(cocos.layer.Layer):$/;"	c
+DemoLayer01	Demos/Events/Demo01.py	/^class DemoLayer01(cocos.layer.Layer):$/;"	c
+DemoLayer02	Demos/BasicConcepts/Demo02.py	/^class DemoLayer02(cocos.layer.Layer):$/;"	c
+DemoLayer03	Demos/BasicConcepts/Demo03.py	/^class DemoLayer03(cocos.layer.Layer):$/;"	c
+DemoLayer04	Demos/BasicConcepts/Demo04.py	/^class DemoLayer04(cocos.layer.Layer):$/;"	c
+DemoScene01	Demos/Events/Demo01.py	/^class DemoScene01(cocos.scene.Scene):$/;"	c
+DemoScene02	Demos/BasicConcepts/Demo02.py	/^class DemoScene02(cocos.scene.Scene):$/;"	c
+DemoScene03	Demos/BasicConcepts/Demo03.py	/^class DemoScene03(cocos.scene.Scene):$/;"	c
 __init__	Demos/BasicConcepts/Demo01.py	/^    def __init__(self):$/;"	m	class:DemoLayer01
+__init__	Demos/BasicConcepts/Demo02.py	/^    def __init__(self):$/;"	m	class:DemoLayer02
+__init__	Demos/BasicConcepts/Demo02.py	/^    def __init__(self):$/;"	m	class:DemoScene02
+__init__	Demos/BasicConcepts/Demo03.py	/^    def __init__(self):$/;"	m	class:DemoLayer03
+__init__	Demos/BasicConcepts/Demo03.py	/^    def __init__(self):$/;"	m	class:DemoScene03
+__init__	Demos/BasicConcepts/Demo04.py	/^    def __init__(self):$/;"	m	class:DemoLayer04
+__init__	Demos/Events/Demo01.py	/^    def __init__(self):$/;"	m	class:DemoLayer01
+__init__	Demos/Events/Demo01.py	/^    def __init__(self):$/;"	m	class:DemoScene01
 config	setup.py	/^config = {$/;"	v
 demo_layer_01	Demos/BasicConcepts/Demo01.py	/^    demo_layer_01 = DemoLayer01()$/;"	v	class:DemoLayer01
+demo_layer_04	Demos/BasicConcepts/Demo04.py	/^demo_layer_04 = DemoLayer04()$/;"	v
 demo_layer_setup	Demos/BasicConcepts/Demo01.py	/^    def demo_layer_setup(self):$/;"	m	class:DemoLayer01
+demo_layer_setup	Demos/BasicConcepts/Demo02.py	/^    def demo_layer_setup(self):$/;"	m	class:DemoLayer02
+demo_layer_setup	Demos/BasicConcepts/Demo03.py	/^    def demo_layer_setup(self):$/;"	m	class:DemoLayer03
 demo_scene_01	Demos/BasicConcepts/Demo01.py	/^    demo_scene_01 = cocos.scene.Scene(demo_layer_01)$/;"	v	class:DemoLayer01
+demo_scene_02	Demos/BasicConcepts/Demo02.py	/^    demo_scene_02 = DemoScene02()$/;"	v
+demo_scene_04	Demos/BasicConcepts/Demo04.py	/^demo_scene_04 = cocos.scene.Scene(demo_layer_04)$/;"	v
+loop	Demos/BasicConcepts/Demo04.py	/^    def loop(self, dt, *args, **kwargs):$/;"	m	class:DemoLayer04
+loop	Demos/Events/Demo01.py	/^    def loop(self, dt, *args, **kwargs):$/;"	m	class:DemoScene01
+on_demo_event_01	Demos/Events/Demo01.py	/^    def on_demo_event_01(self, disp):$/;"	m	class:DemoLayer01
+run	Demos/BasicConcepts/Demo03.py	/^def run():$/;"	f
+run	Demos/Events/Demo01.py	/^def run():$/;"	f
 setup	tests/Demos_tests.py	/^def setup():$/;"	f
+setup_layer	Demos/BasicConcepts/Demo04.py	/^    def setup_layer(self):$/;"	m	class:DemoLayer04
+setup_layer	Demos/Events/Demo01.py	/^    def setup_layer(self):$/;"	m	class:DemoLayer01
+setup_scene	Demos/Events/Demo01.py	/^    def setup_scene(self):$/;"	m	class:DemoScene01
 teardown	tests/Demos_tests.py	/^def teardown():$/;"	f
 test_basic	tests/Demos_tests.py	/^def test_basic():$/;"	f
+trigger_event	Demos/Events/Demo01.py	/^    def trigger_event(self, x_pos, y_pos):$/;"	m	class:DemoEventDispatcher01
