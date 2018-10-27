@@ -44,7 +44,7 @@ Some of the useful methods of the EventDispatcher are shown below:
   
 == AN EXAMPLE ==
 
-{{file:/img/Events-Example.gif}}
+{{local:../wiki_html/img/Events-Example.gif}}
 
 {{{class="brush: python prettyprint"
 import cocos
