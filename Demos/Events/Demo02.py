@@ -15,7 +15,6 @@ class SampleDispatcher(pyglet.event.EventDispatcher):
         # available to the listener when this event is broadcast.
         self.dispatch_event("on_sample_event", self)
 
-
 # This is the object definition for the layer that will be used in this demo.
 # This layer will become a listener for the "on_sample_event".
 class SampleLayer(cocos.layer.Layer):
@@ -72,7 +71,6 @@ class SampleScene(cocos.scene.Scene):
         x_pos = random.randint(0, 640)
         y_pos = random.randint(0, 480)
         self.sample_dispatcher.trigger_event(x_pos, y_pos)
-
 
 def run():
     director.init()

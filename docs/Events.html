@@ -2,6 +2,7 @@
 <html>
 <head>
 <link rel="Stylesheet" type="text/css" href="style.css">
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <title>Events</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
@@ -27,6 +28,7 @@
 </ul>
 
 <hr />
+
 
 <div id="EVENTS"><h1 id="EVENTS">EVENTS</h1></div>
 <blockquote>
@@ -79,7 +81,11 @@ Some of the useful methods of the EventDispatcher are shown below:
   
 <div id="EVENTS-AN EXAMPLE"><h2 id="AN EXAMPLE">AN EXAMPLE</h2></div>
 
-<pre python>
+<p>
+<img src="/img/Events-Example.gif" />
+</p>
+
+<pre class="brush: python prettyprint">
 import cocos
 from cocos.director import director
 import pyglet
@@ -162,6 +168,48 @@ def run():
 
 run()
 </pre>
+
+
+<div id="EVENTS-STUDY QUESTIONS"><h2 id="STUDY QUESTIONS">STUDY QUESTIONS</h2></div>
+
+<p>
+<span id="EVENTS-STUDY QUESTIONS-question-01"></span><span class="tag" id="question-01">question-01</span>
+What method is used by the pyglet.event.EventDispatcher class to broadcast an
+event? <a href="Events.html#question-01-solution">answer</a>
+</p>
+
+<p>
+<span id="EVENTS-STUDY QUESTIONS-question-02"></span><span class="tag" id="question-02">question-02</span>
+What method is used to add a new listeners to a pyglet.event.EventDispatcher
+object? <a href="Events.html#question-02-solution">answer</a>
+</p>
+
+<p>
+<span id="EVENTS-STUDY QUESTIONS-question-0X"></span><span class="tag" id="question-0X">question-0X</span>
+Create an application that displays a random phrase every 5 seconds.  Create a
+Scene class that contains a Layer object and an EventDispatcher object.  Have
+the Scene trigger an event every 5 seconds to display a new phrase.  The Scene
+will pass the new phrase to the EventDispatcher and the Layer will listen for
+the event and display the new phrase. <a href="Events.html#question-0X-solution">solution</a>
+</p>
+
+
+<div id="EVENTS-SOLUTIONS"><h2 id="SOLUTIONS">SOLUTIONS</h2></div>
+
+<p>
+<span id="EVENTS-SOLUTIONS-question-01-solution"></span><span class="tag" id="question-01-solution">question-01-solution</span>
+dispatch_event
+</p>
+
+<p>
+<span id="EVENTS-SOLUTIONS-question-02-solution"></span><span class="tag" id="question-02-solution">question-02-solution</span>
+set_handler
+</p>
+
+<p>
+<span id="EVENTS-SOLUTIONS-question-0X-solution"></span><span class="tag" id="question-0X-solution">question-0X-solution</span>
+TODO
+</p>
 
 </body>
 </html>

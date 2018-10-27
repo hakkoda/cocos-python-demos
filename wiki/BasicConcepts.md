@@ -77,7 +77,7 @@ from cocos.director import director
 
 == CODE EXAMPLES ==
 
-{{{python
+{{{class="brush: python prettyprint"
 # Demonstrate how to setup a director, scene, and layer
 
 # import the cocos package

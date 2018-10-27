@@ -7,6 +7,7 @@
 
 ----
 
+
 = EVENTS =
 
     Cocos2D uses the pyglet Event Framework to handle events.  The following
@@ -43,7 +44,9 @@ Some of the useful methods of the EventDispatcher are shown below:
   
 == AN EXAMPLE ==
 
-{{{python
+{{file:/img/Events-Example.gif}}
+
+{{{class="brush: python prettyprint"
 import cocos
 from cocos.director import director
 import pyglet
@@ -126,3 +129,33 @@ def run():
 
 run()
 }}}
+
+
+== STUDY QUESTIONS ==
+
+:question-01:
+What method is used by the pyglet.event.EventDispatcher class to broadcast an
+event? [[#question-01-solution|answer]]
+
+:question-02:
+What method is used to add a new listeners to a pyglet.event.EventDispatcher
+object? [[#question-02-solution|answer]]
+
+:question-0X:
+Create an application that displays a random phrase every 5 seconds.  Create a
+Scene class that contains a Layer object and an EventDispatcher object.  Have
+the Scene trigger an event every 5 seconds to display a new phrase.  The Scene
+will pass the new phrase to the EventDispatcher and the Layer will listen for
+the event and display the new phrase. [[#question-0X-solution|solution]]
+
+
+== SOLUTIONS ==
+
+:question-01-solution:
+dispatch_event
+
+:question-02-solution:
+set_handler
+
+:question-0X-solution:
+TODO
