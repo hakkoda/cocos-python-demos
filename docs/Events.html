@@ -173,15 +173,18 @@ run()
 <div id="EVENTS-STUDY QUESTIONS"><h2 id="STUDY QUESTIONS">STUDY QUESTIONS</h2></div>
 
 <p>
-<span id="EVENTS-STUDY QUESTIONS-question-01"></span><span class="tag" id="question-01">question-01</span>
 What method is used by the pyglet.event.EventDispatcher class to broadcast an
 event? <a href="Events.html#question-01-solution">answer</a>
 </p>
 
 <p>
-<span id="EVENTS-STUDY QUESTIONS-question-02"></span><span class="tag" id="question-02">question-02</span>
 What method is used to add a new listeners to a pyglet.event.EventDispatcher
 object? <a href="Events.html#question-02-solution">answer</a>
+</p>
+
+<p>
+What method is used to register events to a pyglet.event.EventDispatcher
+object? <a href="Events.html#question-03-solution">answer</a>
 </p>
 
 <p>
@@ -190,7 +193,7 @@ Create an application that displays a random phrase every 5 seconds.  Create a
 Scene class that contains a Layer object and an EventDispatcher object.  Have
 the Scene trigger an event every 5 seconds to display a new phrase.  The Scene
 will pass the new phrase to the EventDispatcher and the Layer will listen for
-the event and display the new phrase. <a href="Events.html#question-0X-solution">solution</a>
+the event and display the new phrase. <a href="Events.html#question-04-solution">solution</a>
 </p>
 
 
@@ -207,9 +210,82 @@ set_handler
 </p>
 
 <p>
-<span id="EVENTS-SOLUTIONS-question-0X-solution"></span><span class="tag" id="question-0X-solution">question-0X-solution</span>
-TODO
+<span id="EVENTS-SOLUTIONS-question-03-solution"></span><span class="tag" id="question-03-solution">question-03-solution</span>
+register_event_type
 </p>
+
+<p>
+<span id="EVENTS-SOLUTIONS-question-04-solution"></span><span class="tag" id="question-04-solution">question-04-solution</span>
+</p>
+<pre class="brush: python prettyprint">
+import cocos
+import pyglet
+from cocos.director import director
+import random
+
+class AppDispatcher(pyglet.event.EventDispatcher):
+    def trigger_event(self, phrase):
+        self.phrase = phrase
+        self.dispatch_event("on_exercise_event", self)
+
+class AppLayer(cocos.layer.Layer):
+    def __init__(self):
+        super(AppLayer, self).__init__()
+        self.setup_label("Event Demo")
+
+    def setup_label(self, phrase):
+        self.label = cocos.text.Label(
+            phrase,
+            font_name = "Times New Roman",
+            font_size = 32,
+            anchor_x = "center", anchor_y = "center")
+        self.label.position = 320, 240
+        self.add(self.label)
+
+    def on_exercise_event(self, disp):
+        self.remove(self.label)
+        self.setup_label(disp.phrase)
+
+
+class AppScene(cocos.scene.Scene):
+    def __init__(self):
+        super(AppScene, self).__init__()
+        self.setup_scene()
+
+    def setup_scene(self):
+        self.app_layer = AppLayer()
+        self.app_dispatcher = AppDispatcher()
+        AppDispatcher.register_event_type("on_exercise_event")
+        self.app_dispatcher.set_handler(
+                "on_exercise_event", self.app_layer.on_exercise_event)
+        self.add(self.app_layer)
+        self.schedule_interval(self.loop, 1)
+
+    def get_phrase(self):
+        phrases = [
+            "phrase 1",
+            "phrase 2",
+            "phrase 3",
+            "phrase 4",
+            "phrase 5"
+        ]
+
+        index = random.randint(0, 4)
+        return phrases[index]
+
+    def loop(self, dt, *args, **kwargs):
+        phrase = self.get_phrase()
+        self.app_dispatcher.trigger_event(phrase)
+
+def run():
+    director.init()
+    app_scene = AppScene()
+    director.run(app_scene)
+
+
+if __name__ == "__main__":
+    run()
+</pre>
 
 </body>
 </html>
